@@ -1,5 +1,5 @@
 #!/usr/bin/env/python
-# _*_ coding: utf-8 _*_
+
 from commandlist import CommandList
 import channels as ch
 import time
@@ -41,5 +41,7 @@ class Ambrosio(object):
 
 
 
-    if __name__ == __main__:
+ if __name__ == "__main__":
         print "Here be dragons!"
+        amb = Ambrosio()
+        amb.mainloop()
