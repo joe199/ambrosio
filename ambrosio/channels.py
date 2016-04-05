@@ -1,16 +1,16 @@
 
 
-
 class Channel(object):
     """Channel class"""
     def __init__(self, name):
         super(Channel, self).__init__()
         self.name = name
 
+
 class TextChannel(object):
     """Channel class, reads commands from file"""
     def __init__(self, name="TextChannel"):
-        super(TextChannel, self).__init__(name)
+        super(TextChannel, self).__init__()
         self.name = name
         self.messages = []
         with open("messages.txt", "r") as f:
