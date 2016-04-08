@@ -15,6 +15,7 @@ class Ambrosio(object):
         self.cl = CommandList()
         self.channels = []
         self.channels.append(ch.TextChannel())
+        self.channels.append(ch.TelegramChannel())
 
         self.actions = []
         self.actions.append(ac.MusicPlayer())
@@ -28,7 +29,7 @@ class Ambrosio(object):
     def update_channels(self):
         for chan in self.channels:
             while chan.msg_avail():
-                self.cl.append(chan.get_msg())
+                self.cl.append((chan, chan.get_msg()))
 
     def execute_command(self, command):
         print "Will execute", command
@@ -51,9 +52,11 @@ class Ambrosio(object):
         #   do_command(command)
         #   update
         while True:
-            command = self.next_command()
+            chan, command = self.next_command()
             if command:
-                self.execute_command(command)
+                response= self.execute_command(command)
+                chan.respond(response)
+                
             time.sleep(1)
             self.update_channels()
 
