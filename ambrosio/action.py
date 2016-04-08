@@ -16,9 +16,10 @@ class MusicPlayer(Action):
     """MusicPlayer for MusicPlayer"""
     def __init__(self, arg):
         super(MusicPlayer, self).__init__()
+        self.triggers = ["music", "audio"]
 
     def do(self):
-        print "will play music"
+        print "will play music", "".join(command)
 
     def is_for_you(self, word):
         if word in self.triggers:
