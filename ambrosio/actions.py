@@ -1,6 +1,7 @@
 
+
 class Action(object):
-    """Action to be carried on by ambrosio"""
+    """Action to be carried on by Ambrosio"""
     def __init__(self):
         super(Action, self).__init__()
 
@@ -11,15 +12,14 @@ class Action(object):
         pass
 
 
-
 class MusicPlayer(Action):
-    """MusicPlayer for MusicPlayer"""
-    def __init__(self, arg):
+    """MusicPlayer for Ambrosio"""
+    def __init__(self):
         super(MusicPlayer, self).__init__()
         self.triggers = ["music", "audio"]
 
-    def do(self):
-        print "will play music", "".join(command)
+    def do(self, command):
+        print "Will play music ", " ".join(command)
 
     def is_for_you(self, word):
         if word in self.triggers:

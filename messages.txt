@@ -1,4 +1,4 @@
 music play
 music stop
 lights livingroom off
-ambiligth on
+ambilight on

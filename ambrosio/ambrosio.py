@@ -6,6 +6,7 @@ import channels as ch
 import actions as ac
 import time
 
+
 class Ambrosio(object):
     """Class for Ambrosio Personal Digital Butler
     Will run our house"""
@@ -15,8 +16,8 @@ class Ambrosio(object):
         self.channels = []
         self.channels.append(ch.TextChannel())
 
-        self.action = []
-        self.action.append(ch.TextChanel())
+        self.actions = []
+        self.actions.append(ac.MusicPlayer())
 
     def next_command(self):
         try:
@@ -31,11 +32,11 @@ class Ambrosio(object):
 
     def execute_command(self, command):
         print "Will execute", command
-        #foreach Action in actions.
+        # Foreach Action in actions.
         #   if is_for_you()
         #       action.do
         words = command.split()
-        first_words = words[0]
+        first_word = words[0]
         rest_words = words[1:]
         for a in self.actions:
             if a.is_for_you(first_word):
@@ -43,7 +44,6 @@ class Ambrosio(object):
                 break
         else:
             print "No t'entenc"
-
 
     def mainloop(self):
         # While True:
