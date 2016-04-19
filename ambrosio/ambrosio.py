@@ -9,6 +9,7 @@ import time
 
 class Ambrosio(object):
     """Class for Ambrosio Personal Digital Butler
+
     Will run our house"""
     def __init__(self):
         super(Ambrosio, self).__init__()
@@ -24,7 +25,7 @@ class Ambrosio(object):
         try:
             return self.cl.next()
         except:
-            return None
+            return (None, None)
 
     def update_channels(self):
         for chan in self.channels:
@@ -39,12 +40,14 @@ class Ambrosio(object):
         words = command.split()
         first_word = words[0]
         rest_words = words[1:]
+        response = None
         for a in self.actions:
             if a.is_for_you(first_word):
-                a.do(rest_words)
+                response = a.do(rest_words)
                 break
         else:
             print "No t'entenc"
+        return response
 
     def mainloop(self):
         # While True:
@@ -54,9 +57,9 @@ class Ambrosio(object):
         while True:
             chan, command = self.next_command()
             if command:
-                response= self.execute_command(command)
+                response = self.execute_command(command)
                 chan.respond(response)
-                
+
             time.sleep(1)
             self.update_channels()
 
