@@ -1,0 +1,12 @@
+telegram:
+  token: 191832354:AAEbIz-5DBvDIbgGl-dXRwOFym8SKVtgXMs
+  usuaris:
+    -joe_199
+    -hola
+  musicplayer:
+    directories:
+      - /home/pi/musicplayer
+      - /home/shared
+  homecontrol:
+    windows:
+      room1: open

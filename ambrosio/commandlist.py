@@ -1,5 +1,4 @@
 
-
 class CommandList(object):
     def __init__(self):
         super(CommandList, self).__init__()
