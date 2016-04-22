@@ -35,7 +35,7 @@ class AmbrosioBot(telepot.Bot):
 
 class TelegramChannel(Channel):
     """Channel class, received commands from telegram"""
-    def __init__(self, cfg=None, name="TelegramChannel"):
+    def __init__(self, cfg = None, name = "TelegramChannel"):
         super(TelegramChannel, self).__init__(cfg, name)
         token=self.cfg["telegram"]["token"]
         self.bot = AmbrosioBot(token,self.cfg["telegram"]["usuaris"] )

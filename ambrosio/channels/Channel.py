@@ -7,7 +7,7 @@ class Channel(object):
         super(Channel, self).__init__()
         self.name = name
         self.cfg = cfg
-        print json.dumps(self.cfg, indent=4)
+        #print json.dumps(self.cfg, indent=4)
 
     def respond(self, response):
         print "RESPONSE: ", response
