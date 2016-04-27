@@ -9,7 +9,7 @@ class SensorActions(Action):
 
     def do(self, command):
         print "Will mesure temperature ", " ".join(command)
-        th = subprocess.check_output(['sudo', 'AdafruitDHT','11','4'])
+        th = subprocess.check_output(['sudo','AdafruitDHT.py','11','4'])
         return th
 
     def is_for_you(self, word):

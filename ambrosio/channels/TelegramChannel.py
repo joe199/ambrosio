@@ -20,6 +20,7 @@ class AmbrosioBot(telepot.Bot):
         content_type, chat_type, chat_id = telepot.glance(msg)
         if content_type == 'text':
             command = msg['text']
+            #print msg["from"]["id"]#per saber el id del numero telegram
             if msg["from"]["id"] in self.users:
                 if self.clist is not None:
                     self.clist.append(command)
