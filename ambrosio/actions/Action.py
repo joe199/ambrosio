@@ -1,7 +1,8 @@
 class Action(object):
     """Action to be carried on by Ambrosio"""
-    def __init__(self):
-        super(Action, self).__init__()
+    def __init__(self, cfg):
+        super(Action, self).__init__(cfg)
+        self.cfg = cfg
 
     def do(self):
         pass

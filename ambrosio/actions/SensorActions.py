@@ -3,8 +3,8 @@ import subprocess
 
 class SensorActions(Action):
     """SensorActions for Ambrosio"""
-    def __init__(self):
-        super(SensorActions, self).__init__()
+    def __init__(self, cfg):
+        super(SensorActions, self).__init__(cfg)
         self.triggers = ["Temperature"]
 
     def do(self, command):
