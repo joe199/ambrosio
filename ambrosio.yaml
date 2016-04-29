@@ -2,3 +2,9 @@ telegram:
   token: 191832354:AAEbIz-5DBvDIbgGl-dXRwOFym8SKVtgXMs
   usuaris:
     - 4627515
+wol:
+  pcs:
+    - nom: "pc1"
+      mac: "11:11:11:11:11:11"
+    - nom: "joe199"
+      mac: "12:12:12:12:12:12"

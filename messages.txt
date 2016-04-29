@@ -2,3 +2,5 @@ music play
 music stop
 lights livingroom off
 ambilight on
+wake joe
+wake pc
